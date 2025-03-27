@@ -1,5 +1,5 @@
-import sequelize from './database';
-import {User} from '@core/models/models';
+import sequelize from './bdConfig';
+import {User} from '@core/models/model';
 
 
 const syncDatabase = async () => {
@@ -11,8 +11,6 @@ const syncDatabase = async () => {
 
     // Sincronizar los modelos en el orden correcto
     await User.sync({ alter: true });
-    await Task.sync({ alter: true }); 
-    await Subtask.sync({ alter: true });
 
     console.log('All models were synchronized successfully.');
   } catch (error) {
