@@ -1,6 +1,6 @@
 import { Model, DataTypes } from 'sequelize';
 import sequelize from '@core/config/bdConfig';
-import { ISkill } from '@core/interfaces/';
+import { ISkill } from '@core/interfaces/interfaces';
 
 class Skill extends Model<ISkill> implements ISkill {
   public id!: number;
