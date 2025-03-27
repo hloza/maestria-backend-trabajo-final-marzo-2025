@@ -2,10 +2,10 @@
 import { Router } from 'express';
 import authRoutes from './modules/auth/routes';
 import userRoutes from './modules/user/routes';
-import skillRoutes from './modules/skill/routes';
-import projectRoutes from './modules/project/routes';
+import skillRoutes from './modules/skills/routes';
+import projectRoutes from './modules/project/router';
 import experienceRoutes from './modules/experiencia/routes';
-import educationRoutes from './modules/education/routes';
+import educationRoutes from './modules/education/router';
 
 
 const router = Router();
