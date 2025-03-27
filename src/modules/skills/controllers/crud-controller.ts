@@ -15,7 +15,7 @@ export class SkillController {
     }
   }
 
-  public async getSkillById(req: Request, res: Response, next: NextFunction): Promise<void> {
+  public async getSkillByUserId(req: Request, res: Response, next: NextFunction): Promise<void> {
     try {
       const userId = (req as any).user.id;
       const skill = await skillService.findById(Number(req.params.id), userId);
@@ -41,6 +41,9 @@ export class SkillController {
   public async updateSkill(req: Request, res: Response, next: NextFunction): Promise<void> {
     try {
       const userId = (req as any).user.id;
+      console.log('User ID:', userId); // Debugging line
+      console.log('Request Body:', req.body); // Debugging line 
+        console.log('Skill ID:', req.params.id); // Debugging line
       const skill = await skillService.update(Number(req.params.id), userId, req.body);
       if (!skill) {
         throw new NotFoundError('Skill not found');

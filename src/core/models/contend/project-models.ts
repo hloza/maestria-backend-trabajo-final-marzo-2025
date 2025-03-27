@@ -20,10 +20,6 @@ Project.init({
     type: DataTypes.INTEGER,
     allowNull: false,
     field: 'userId',
-    references: {
-      model: 'users',
-      key: 'id'
-    }
   },
   title: {
     type: DataTypes.STRING,

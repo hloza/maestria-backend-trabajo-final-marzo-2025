@@ -10,12 +10,12 @@ export class EducationService {
     return await Education.findAll({ where: { userId } });
   }
 
-  public async findById(id: number, userId: number): Promise<Education | null> {
-    return await Education.findOne({ where: { id, userId } });
+  public async findById( userId: number): Promise<Education[] | null> {
+    return await Education.findAll({ where: { userId } });
   }
 
-  public async update(id: number, userId: number, educationData: Partial<IEducation>): Promise<Education | null> {
-    const education = await Education.findOne({ where: { id, userId } });
+  public async update(id: number, educationData: Partial<IEducation>): Promise<Education | null> {
+    const education = await Education.findOne({ where: { id } });
     if (!education) return null;
     
     return await education.update(educationData);

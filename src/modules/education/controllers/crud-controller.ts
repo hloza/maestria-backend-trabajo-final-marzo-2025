@@ -18,7 +18,7 @@ export class EducationController {
   public async getEducationById(req: Request, res: Response, next: NextFunction): Promise<void> {
     try {
       const userId = (req as any).user.id;
-      const education = await educationService.findById(Number(req.params.id), userId);
+      const education = await educationService.findById( userId);
       if (!education) {
         throw new NotFoundError('Education record not found');
       }
@@ -41,7 +41,7 @@ export class EducationController {
   public async updateEducation(req: Request, res: Response, next: NextFunction): Promise<void> {
     try {
       const userId = (req as any).user.id;
-      const education = await educationService.update(Number(req.params.id), userId, req.body);
+      const education = await educationService.update(Number(req.params.id), req.body);
       if (!education) {
         throw new NotFoundError('Education record not found');
       }

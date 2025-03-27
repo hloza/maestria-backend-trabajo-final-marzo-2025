@@ -9,7 +9,7 @@ router.use(authMiddleware);
 
 router.post('/', experienceController.createExperience);
 router.get('/', experienceController.getAllExperiences);
-router.get('/:id', experienceController.getExperienceById);
+router.get('/user', experienceController.getExperienceById);
 router.put('/:id', experienceController.updateExperience);
 router.delete('/:id', experienceController.deleteExperience);
 

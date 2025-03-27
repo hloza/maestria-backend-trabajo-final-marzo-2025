@@ -9,7 +9,7 @@ router.use(authMiddleware);
 
 router.post('/', skillController.createSkill);
 router.get('/', skillController.getAllSkills);
-router.get('/:id', skillController.getSkillById);
+router.get('/:id', skillController.getSkillByUserId);
 router.put('/:id', skillController.updateSkill);
 router.delete('/:id', skillController.deleteSkill);
 

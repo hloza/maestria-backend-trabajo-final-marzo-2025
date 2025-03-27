@@ -18,7 +18,7 @@ export class ExperienceController {
   public async getExperienceById(req: Request, res: Response, next: NextFunction): Promise<void> {
     try {
       const userId = (req as any).user.id;
-      const experience = await experienceService.findById(Number(req.params.id), userId);
+      const experience = await experienceService.findById( userId);
       if (!experience) {
         throw new NotFoundError('Experience not found');
       }

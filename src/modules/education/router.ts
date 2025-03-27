@@ -9,7 +9,7 @@ router.use(authMiddleware);
 
 router.post('/', educationController.createEducation);
 router.get('/', educationController.getAllEducation);
-router.get('/:id', educationController.getEducationById);
+router.get('/user', educationController.getEducationById);
 router.put('/:id', educationController.updateEducation);
 router.delete('/:id', educationController.deleteEducation);
 

@@ -10,8 +10,8 @@ export class ExperienceService {
     return await Experience.findAll({ where: { userId } });
   }
 
-  public async findById(id: number, userId: number): Promise<Experience | null> {
-    return await Experience.findOne({ where: { id, userId } });
+  public async findById( userId: number): Promise<Experience []| null> {
+    return await Experience.findAll({ where: {  userId } });
   }
 
   public async update(id: number, userId: number, experienceData: Partial<IExperience>): Promise<Experience | null> {

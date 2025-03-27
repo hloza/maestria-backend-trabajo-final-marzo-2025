@@ -1,3 +1,4 @@
+
 import sequelize from './bdConfig';
 import {User,Skill, Project, Education, Experience} from '@models/index';
 
