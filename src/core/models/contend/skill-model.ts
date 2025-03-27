@@ -17,7 +17,7 @@ Skill.init({
   userId: {
     type: DataTypes.INTEGER,
     allowNull: false,
-    field: 'user_id',
+    field: 'userId',
     references: {
       model: 'users',
       key: 'id'

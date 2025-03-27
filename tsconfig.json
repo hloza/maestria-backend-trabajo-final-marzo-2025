@@ -13,6 +13,6 @@
       "@core/*": ["./src/core/*"],
     },
   },
-  "include": ["src/**/*"],
+  "include": ["src/**/*", "../../experiencia"],
   "exclude": ["node_modules", "dist"]
 }
