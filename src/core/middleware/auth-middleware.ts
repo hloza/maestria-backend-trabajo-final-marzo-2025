@@ -1,5 +1,5 @@
 import { Request, Response, NextFunction } from 'express';
-import { validateAuthToken } from '../utils/sessionUtils';
+import { validateAuthToken } from '../utils/session-utils';
 
 // Definición de la interfaz AuthRequest
 export interface AuthRequest extends Request {

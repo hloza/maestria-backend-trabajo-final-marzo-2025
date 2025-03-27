@@ -1,7 +1,8 @@
-import { User, UserAttributes } from '@core/models/contend/user-model';
+import { User } from '@core/models/index';
+import { IUser } from '@core/interfaces/interfaces';
 
 export class UserService {
-  async create(userData: UserAttributes): Promise<User> {
+  async create(userData: IUser): Promise<User> {
     try {
       const user = await User.create(userData);
       return user;
@@ -26,7 +27,7 @@ export class UserService {
     }
   }
 
-  async update(id: number, userData: Partial<UserAttributes>): Promise<User | null> {
+  async update(id: number, userData: Partial<IUser>): Promise<User | null> {
     try {
       const user = await User.findByPk(id);
       if (!user) return null;

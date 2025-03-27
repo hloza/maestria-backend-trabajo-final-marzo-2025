@@ -5,12 +5,7 @@ import { NotFoundError } from '@core/utils/cusstom-errors';
 const userService = new UserService();
 
 export class UserController {
-    private userService: UserService;
-
-    constructor() {
-      this.userService = new UserService();
-    }
- 
+   
 
   public async createUser(req: Request, res: Response, next: NextFunction): Promise<void> {
     try {
@@ -23,7 +18,8 @@ export class UserController {
 
   public async getUserById(req: Request, res: Response, next: NextFunction): Promise<void> {
     try {
-      const user = await userService.findById(Number(req.params.id));
+        const userId = (req as any).user.id;
+      const user = await userService.findById(userId);
       if (!user) {
         throw new NotFoundError('User not found');
       }
@@ -35,7 +31,8 @@ export class UserController {
 
   public async updateUser(req: Request, res: Response, next: NextFunction): Promise<void> {
     try {
-      const user = await userService.update(Number(req.params.id), req.body);
+        const userId = (req as any).user.id;  
+      const user = await userService.update(userId, req.body);
       if (user) {
         res.status(200).json(user);
       } else {
